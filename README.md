@@ -1,10 +1,11 @@
 # Roles Microservice Client SDK for Node.js
 
-This is a Node.js client SDK for [pip-services-roles](https://github.com/pip-services/pip-services-roles) microservice.
+This is a Node.js client SDK for [pip-services-roles](https://github.com/pip-services-users/pip-services-roles-node) microservice.
 It provides an easy to use abstraction over communication protocols:
 
-* HTTP/REST client
+* HTTP client
 * Seneca client (see http://www.senecajs.org)
+* Direct client for monolythic deployments
 * Null client to be used in testing
 
 <a name="links"></a> Quick Links:
@@ -39,14 +40,14 @@ npm update
 
 Inside your code get the reference to the client SDK
 ```javascript
-var sdk = new require('pip-clients-roles-node').Version1;
+var sdk = new require('pip-clients-roles-node');
 ```
 
 Define client configuration parameters that match configuration of the microservice external API
 ```javascript
 // Client configuration
 var config = {
-    endpoint: {
+    connection: {
         protocol: 'http',
         host: 'localhost', 
         port: 8013
@@ -57,10 +58,10 @@ var config = {
 Instantiate the client and open connection to the microservice
 ```javascript
 // Create the client instance
-var client = sdk.RolesRestClient(config);
+var client = sdk.RolesHttpClientV1(config);
 
 // Connect to the microservice
-client.open(function(err) {
+client.open(null, function(err) {
     if (err) {
         console.error('Connection to the microservice failed');
         console.error(err);
