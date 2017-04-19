@@ -1,2 +1,2 @@
 export * from './version1';
-export { RolesFactory } from './build/RolesFactory';
+export { RolesClientFactory } from './build/RolesClientFactory';

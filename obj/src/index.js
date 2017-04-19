@@ -4,6 +4,6 @@ function __export(m) {
 }
 Object.defineProperty(exports, "__esModule", { value: true });
 __export(require("./version1"));
-var RolesFactory_1 = require("./build/RolesFactory");
-exports.RolesFactory = RolesFactory_1.RolesFactory;
+var RolesClientFactory_1 = require("./build/RolesClientFactory");
+exports.RolesClientFactory = RolesClientFactory_1.RolesClientFactory;
 //# sourceMappingURL=index.js.map

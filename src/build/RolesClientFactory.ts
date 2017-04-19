@@ -6,7 +6,7 @@ import { RolesDirectClientV1 } from '../version1/RolesDirectClientV1';
 import { RolesHttpClientV1 } from '../version1/RolesHttpClientV1';
 import { RolesSenecaClientV1 } from '../version1/RolesSenecaClientV1';
 
-export class RolesFactory extends Factory {
+export class RolesClientFactory extends Factory {
 	public static Descriptor: Descriptor = new Descriptor('pip-services-roles', 'factory', 'default', 'default', '1.0');
 	public static NullClientV1Descriptor = new Descriptor('pip-services-roles', 'client', 'null', 'default', '1.0');
 	public static DirectClientV1Descriptor = new Descriptor('pip-services-roles', 'client', 'direct', 'default', '1.0');
@@ -16,10 +16,10 @@ export class RolesFactory extends Factory {
 	constructor() {
 		super();
 
-		this.registerAsType(RolesFactory.NullClientV1Descriptor, RolesNullClientV1);
-		this.registerAsType(RolesFactory.DirectClientV1Descriptor, RolesDirectClientV1);
-		this.registerAsType(RolesFactory.HttpClientV1Descriptor, RolesHttpClientV1);
-		this.registerAsType(RolesFactory.SenecaClientV1Descriptor, RolesSenecaClientV1);
+		this.registerAsType(RolesClientFactory.NullClientV1Descriptor, RolesNullClientV1);
+		this.registerAsType(RolesClientFactory.DirectClientV1Descriptor, RolesDirectClientV1);
+		this.registerAsType(RolesClientFactory.HttpClientV1Descriptor, RolesHttpClientV1);
+		this.registerAsType(RolesClientFactory.SenecaClientV1Descriptor, RolesSenecaClientV1);
 	}
 	
 }
