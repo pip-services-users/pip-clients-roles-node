@@ -7,9 +7,9 @@ import { DataPage } from 'pip-services-commons-node';
 import { DirectClient } from 'pip-services-net-node';
 
 import { IRolesClientV1 } from './IRolesClientV1';
-import { IRolesBusinessLogic } from 'pip-services-Roles-node';
+//import { IRolesController } from 'pip-services-Roles-node';
 
-export class RolesDirectClientV1 extends DirectClient<IRolesBusinessLogic> implements IRolesClientV1 {
+export class RolesDirectClientV1 extends DirectClient<any> implements IRolesClientV1 {
             
     public constructor(config?: any) {
         super();

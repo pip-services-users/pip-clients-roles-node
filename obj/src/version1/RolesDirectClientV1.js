@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const pip_services_commons_node_1 = require("pip-services-commons-node");
 const pip_services_commons_node_2 = require("pip-services-commons-node");
 const pip_services_net_node_1 = require("pip-services-net-node");
+//import { IRolesController } from 'pip-services-Roles-node';
 class RolesDirectClientV1 extends pip_services_net_node_1.DirectClient {
     constructor(config) {
         super();
