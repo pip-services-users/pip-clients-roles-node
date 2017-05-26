@@ -11,9 +11,16 @@ class RolesDirectClientV1 extends pip_services_net_node_1.DirectClient {
         if (config != null)
             this.configure(pip_services_commons_node_1.ConfigParams.fromValue(config));
     }
-    getRoles(correlationId, userId, callback) {
-        let timing = this.instrument(correlationId, 'roles.get_roles');
-        this._controller.getRoles(correlationId, userId, (err, roles) => {
+    getRolesByFilter(correlationId, filter, paging, callback) {
+        let timing = this.instrument(correlationId, 'roles.get_roles_by_filter');
+        this._controller.getRolesByFilter(correlationId, filter, paging, (err, page) => {
+            timing.endTiming();
+            callback(err, page);
+        });
+    }
+    getRolesById(correlationId, userId, callback) {
+        let timing = this.instrument(correlationId, 'roles.get_roles_by_id');
+        this._controller.getRolesById(correlationId, userId, (err, roles) => {
             timing.endTiming();
             callback(err, roles);
         });

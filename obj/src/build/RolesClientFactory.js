@@ -6,6 +6,7 @@ const RolesNullClientV1_1 = require("../version1/RolesNullClientV1");
 const RolesDirectClientV1_1 = require("../version1/RolesDirectClientV1");
 const RolesHttpClientV1_1 = require("../version1/RolesHttpClientV1");
 const RolesSenecaClientV1_1 = require("../version1/RolesSenecaClientV1");
+const RolesLambdaClientV1_1 = require("../version1/RolesLambdaClientV1");
 class RolesClientFactory extends pip_services_commons_node_2.Factory {
     constructor() {
         super();
@@ -13,6 +14,7 @@ class RolesClientFactory extends pip_services_commons_node_2.Factory {
         this.registerAsType(RolesClientFactory.DirectClientV1Descriptor, RolesDirectClientV1_1.RolesDirectClientV1);
         this.registerAsType(RolesClientFactory.HttpClientV1Descriptor, RolesHttpClientV1_1.RolesHttpClientV1);
         this.registerAsType(RolesClientFactory.SenecaClientV1Descriptor, RolesSenecaClientV1_1.RolesSenecaClientV1);
+        this.registerAsType(RolesClientFactory.LambdaClientV1Descriptor, RolesLambdaClientV1_1.RolesLambdaClientV1);
     }
 }
 RolesClientFactory.Descriptor = new pip_services_commons_node_1.Descriptor('pip-services-roles', 'factory', 'default', 'default', '1.0');
@@ -20,5 +22,6 @@ RolesClientFactory.NullClientV1Descriptor = new pip_services_commons_node_1.Desc
 RolesClientFactory.DirectClientV1Descriptor = new pip_services_commons_node_1.Descriptor('pip-services-roles', 'client', 'direct', 'default', '1.0');
 RolesClientFactory.HttpClientV1Descriptor = new pip_services_commons_node_1.Descriptor('pip-services-roles', 'client', 'http', 'default', '1.0');
 RolesClientFactory.SenecaClientV1Descriptor = new pip_services_commons_node_1.Descriptor('pip-services-roles', 'client', 'seneca', 'default', '1.0');
+RolesClientFactory.LambdaClientV1Descriptor = new pip_services_commons_node_1.Descriptor('pip-services-roles', 'client', 'lambda', 'default', '1.0');
 exports.RolesClientFactory = RolesClientFactory;
 //# sourceMappingURL=RolesClientFactory.js.map

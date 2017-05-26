@@ -1,7 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+const pip_services_commons_node_1 = require("pip-services-commons-node");
 class RolesNullClientV1 {
-    getRoles(correlationId, userId, callback) {
+    getRolesByFilter(correlationId, filter, paging, callback) {
+        callback(null, new pip_services_commons_node_1.DataPage([], 0));
+    }
+    getRolesById(correlationId, userId, callback) {
         callback(null, []);
     }
     setRoles(correlationId, userId, roles, callback) {

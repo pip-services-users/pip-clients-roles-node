@@ -1,7 +1,17 @@
+import { FilterParams } from 'pip-services-commons-node';
+import { PagingParams } from 'pip-services-commons-node';
+import { DataPage } from 'pip-services-commons-node';
+
+import { UserRolesV1 } from './UserRolesV1';
 import { IRolesClientV1 } from './IRolesClientV1';
 
 export class RolesNullClientV1 implements IRolesClientV1 {
-    public getRoles(correlationId: string, userId: string,
+    public getRolesByFilter(correlationId: string, filter: FilterParams, paging: PagingParams, 
+        callback: (err: any, page: DataPage<UserRolesV1>) => void): void {
+        callback(null, new DataPage<UserRolesV1>([], 0));
+    }
+
+    public getRolesById(correlationId: string, userId: string,
         callback: (err: any, roles: string[]) => void) {
         callback(null, []);
     }

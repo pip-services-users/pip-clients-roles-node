@@ -8,8 +8,14 @@ class RolesHttpClientV1 extends pip_services_net_node_1.CommandableHttpClient {
         if (config != null)
             this.configure(pip_services_commons_node_1.ConfigParams.fromValue(config));
     }
-    getRoles(correlationId, userId, callback) {
-        this.callCommand('get_roles', correlationId, {
+    getRolesByFilter(correlationId, filter, paging, callback) {
+        this.callCommand('get_roles_by_filter', correlationId, {
+            filter: filter,
+            paging: paging
+        }, callback);
+    }
+    getRolesById(correlationId, userId, callback) {
+        this.callCommand('get_roles_by_id', correlationId, {
             user_id: userId
         }, callback);
     }

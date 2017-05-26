@@ -5,6 +5,7 @@ import { PagingParams } from 'pip-services-commons-node';
 import { DataPage } from 'pip-services-commons-node';
 import { CommandableHttpClient } from 'pip-services-net-node';
 
+import { UserRolesV1 } from './UserRolesV1';
 import { IRolesClientV1 } from './IRolesClientV1';
 
 export class RolesHttpClientV1 extends CommandableHttpClient implements IRolesClientV1 {
@@ -15,11 +16,24 @@ export class RolesHttpClientV1 extends CommandableHttpClient implements IRolesCl
         if (config != null)
             this.configure(ConfigParams.fromValue(config));
     }
+
+    public getRolesByFilter(correlationId: string, filter: FilterParams, paging: PagingParams, 
+        callback: (err: any, page: DataPage<UserRolesV1>) => void): void {
+        this.callCommand(
+            'get_roles_by_filter',
+            correlationId,
+            {
+                filter: filter,
+                paging: paging
+            },
+            callback
+        );
+    }
         
-    public getRoles(correlationId: string, userId: string,
+    public getRolesById(correlationId: string, userId: string,
         callback: (err: any, roles: string[]) => void) {
         this.callCommand(
-            'get_roles',
+            'get_roles_by_id',
             correlationId,
             {
                 user_id: userId

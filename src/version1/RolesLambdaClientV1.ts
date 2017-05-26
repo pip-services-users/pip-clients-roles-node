@@ -5,6 +5,7 @@ import { PagingParams } from 'pip-services-commons-node';
 import { DataPage } from 'pip-services-commons-node';
 import { CommandableLambdaClient } from 'pip-services-aws-node';
 
+import { UserRolesV1 } from './UserRolesV1';
 import { IRolesClientV1 } from './IRolesClientV1';
 
 export class RolesLambdaClientV1 extends CommandableLambdaClient implements IRolesClientV1 {
@@ -16,10 +17,23 @@ export class RolesLambdaClientV1 extends CommandableLambdaClient implements IRol
             this.configure(ConfigParams.fromValue(config));
     }
         
-    public getRoles(correlationId: string, userId: string,
+    public getRolesByFilter(correlationId: string, filter: FilterParams, paging: PagingParams, 
+        callback: (err: any, page: DataPage<UserRolesV1>) => void): void {
+        this.callCommand(
+            'get_roles_by_filter',
+            correlationId,
+            {
+                filter: filter,
+                paging: paging
+            },
+            callback
+        );
+    }
+
+    public getRolesById(correlationId: string, userId: string,
         callback: (err: any, roles: string[]) => void) {
         this.callCommand(
-            'get_roles',
+            'get_roles_by_id',
             correlationId,
             {
                 user_id: userId

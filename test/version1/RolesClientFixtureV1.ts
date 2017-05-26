@@ -2,6 +2,10 @@ let _ = require('lodash');
 let async = require('async');
 let assert = require('chai').assert;
 
+import { DataPage } from 'pip-services-commons-node';
+import { FilterParams } from 'pip-services-commons-node';
+import { PagingParams } from 'pip-services-commons-node';
+
 import { IRolesClientV1 } from '../../src/version1/IRolesClientV1';
 
 let ROLES = ['Role 1', 'Role 2', 'Role 3'];
@@ -32,13 +36,27 @@ export class RolesClientFixtureV1 {
             },
         // Read and check party roles
             (callback) => {
-                this._client.getRoles(
+                this._client.getRolesById(
                     null,
                     '1',
                     (err, roles) => {
                         assert.isNull(err);
                         
                         assert.lengthOf(roles, 3);
+
+                        callback();
+                    }
+                );
+            },
+            (callback) => {
+                this._client.getRolesByFilter(
+                    null,
+                    FilterParams.fromTuples('roles', ROLES),
+                    null,
+                    (err, page) => {
+                        assert.isNull(err);
+                        
+                        assert.lengthOf(page.data, 1);
 
                         callback();
                     }
@@ -99,7 +117,7 @@ export class RolesClientFixtureV1 {
             },
         // Get roles
             (callback) => {
-                this._client.getRoles(
+                this._client.getRolesById(
                     null,
                     '1',
                     (err, roles) => {

@@ -6,6 +6,7 @@ import { PagingParams} from 'pip-services-commons-node';
 import { DataPage } from 'pip-services-commons-node';
 import { DirectClient } from 'pip-services-net-node';
 
+import { UserRolesV1 } from './UserRolesV1';
 import { IRolesClientV1 } from './IRolesClientV1';
 //import { IRolesController } from 'pip-services-Roles-node';
 
@@ -19,10 +20,19 @@ export class RolesDirectClientV1 extends DirectClient<any> implements IRolesClie
             this.configure(ConfigParams.fromValue(config));
     }
 
-    public getRoles(correlationId: string, userId: string,
+    public getRolesByFilter(correlationId: string, filter: FilterParams, paging: PagingParams, 
+        callback: (err: any, page: DataPage<UserRolesV1>) => void): void {
+        let timing = this.instrument(correlationId, 'roles.get_roles_by_filter');
+        this._controller.getRolesByFilter(correlationId, filter, paging, (err, page) => {
+            timing.endTiming();
+            callback(err, page);
+        });
+    }
+
+    public getRolesById(correlationId: string, userId: string,
         callback: (err: any, roles: string[]) => void) {
-        let timing = this.instrument(correlationId, 'roles.get_roles');
-        this._controller.getRoles(correlationId, userId, (err, roles) => {
+        let timing = this.instrument(correlationId, 'roles.get_roles_by_id');
+        this._controller.getRolesById(correlationId, userId, (err, roles) => {
             timing.endTiming();
             callback(err, roles);
         });
