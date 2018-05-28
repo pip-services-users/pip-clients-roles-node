@@ -11,7 +11,7 @@ import { IRolesClientV1 } from './IRolesClientV1';
 export class RolesHttpClientV1 extends CommandableHttpClient implements IRolesClientV1 {
 
     constructor(config?: any) {
-        super('roles');
+        super('v1/roles');
 
         if (config != null)
             this.configure(ConfigParams.fromValue(config));
