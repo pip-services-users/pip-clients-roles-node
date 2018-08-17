@@ -1,7 +1,7 @@
 import { FilterParams } from 'pip-services-commons-node';
 import { PagingParams } from 'pip-services-commons-node';
 import { DataPage } from 'pip-services-commons-node';
-import { CommandableHttpClient } from 'pip-services-net-node';
+import { CommandableHttpClient } from 'pip-services-rpc-node';
 import { UserRolesV1 } from './UserRolesV1';
 import { IRolesClientV1 } from './IRolesClientV1';
 export declare class RolesHttpClientV1 extends CommandableHttpClient implements IRolesClientV1 {

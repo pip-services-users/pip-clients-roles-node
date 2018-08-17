@@ -1,11 +1,11 @@
 import { Descriptor } from 'pip-services-commons-node';
-import { Factory } from 'pip-services-commons-node';
+import { Factory } from 'pip-services-components-node';
 export declare class RolesClientFactory extends Factory {
     static Descriptor: Descriptor;
-    static NullClientV1Descriptor: any;
-    static DirectClientV1Descriptor: any;
-    static HttpClientV1Descriptor: any;
-    static SenecaClientV1Descriptor: any;
-    static LambdaClientV1Descriptor: any;
+    static NullClientV1Descriptor: Descriptor;
+    static DirectClientV1Descriptor: Descriptor;
+    static HttpClientV1Descriptor: Descriptor;
+    static SenecaClientV1Descriptor: Descriptor;
+    static LambdaClientV1Descriptor: Descriptor;
     constructor();
 }

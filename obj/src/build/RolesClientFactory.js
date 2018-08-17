@@ -1,13 +1,13 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const pip_services_commons_node_1 = require("pip-services-commons-node");
-const pip_services_commons_node_2 = require("pip-services-commons-node");
+const pip_services_components_node_1 = require("pip-services-components-node");
 const RolesNullClientV1_1 = require("../version1/RolesNullClientV1");
 const RolesDirectClientV1_1 = require("../version1/RolesDirectClientV1");
 const RolesHttpClientV1_1 = require("../version1/RolesHttpClientV1");
 const RolesSenecaClientV1_1 = require("../version1/RolesSenecaClientV1");
 const RolesLambdaClientV1_1 = require("../version1/RolesLambdaClientV1");
-class RolesClientFactory extends pip_services_commons_node_2.Factory {
+class RolesClientFactory extends pip_services_components_node_1.Factory {
     constructor() {
         super();
         this.registerAsType(RolesClientFactory.NullClientV1Descriptor, RolesNullClientV1_1.RolesNullClientV1);

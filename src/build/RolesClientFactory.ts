@@ -1,5 +1,5 @@
 import { Descriptor } from 'pip-services-commons-node';
-import { Factory } from 'pip-services-commons-node';
+import { Factory } from 'pip-services-components-node';
 
 import { RolesNullClientV1 } from '../version1/RolesNullClientV1';
 import { RolesDirectClientV1 } from '../version1/RolesDirectClientV1';
