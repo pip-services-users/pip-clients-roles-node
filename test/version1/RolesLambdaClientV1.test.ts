@@ -1,6 +1,6 @@
 let process = require('process');
 
-import { ConfigParams } from 'pip-services-commons-node';
+import { ConfigParams } from 'pip-services3-commons-node';
 
 import { RolesClientFixtureV1 } from './RolesClientFixtureV1';
 import { RolesLambdaClientV1 } from '../../src/version1/RolesLambdaClientV1';
