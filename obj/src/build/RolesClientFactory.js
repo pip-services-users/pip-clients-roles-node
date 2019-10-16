@@ -21,6 +21,7 @@ class RolesClientFactory extends pip_services3_components_node_1.Factory {
         this.registerAsType(RolesClientFactory.GrpcClientV1Descriptor, RolesGrpcClientV1_1.RolesGrpcClientV1);
     }
 }
+exports.RolesClientFactory = RolesClientFactory;
 RolesClientFactory.Descriptor = new pip_services3_commons_node_1.Descriptor('pip-services-roles', 'factory', 'default', 'default', '1.0');
 RolesClientFactory.NullClientV1Descriptor = new pip_services3_commons_node_1.Descriptor('pip-services-roles', 'client', 'null', 'default', '1.0');
 RolesClientFactory.MemoryClientV1Descriptor = new pip_services3_commons_node_1.Descriptor('pip-services-roles', 'client', 'memory', 'default', '1.0');
@@ -29,5 +30,4 @@ RolesClientFactory.HttpClientV1Descriptor = new pip_services3_commons_node_1.Des
 RolesClientFactory.LambdaClientV1Descriptor = new pip_services3_commons_node_1.Descriptor('pip-services-roles', 'client', 'lambda', 'default', '1.0');
 RolesClientFactory.CommandableGrpcClientV1Descriptor = new pip_services3_commons_node_1.Descriptor('pip-services-roles', 'client', 'commandable-grpc', 'default', '1.0');
 RolesClientFactory.GrpcClientV1Descriptor = new pip_services3_commons_node_1.Descriptor('pip-services-roles', 'client', 'grpc', 'default', '1.0');
-exports.RolesClientFactory = RolesClientFactory;
 //# sourceMappingURL=RolesClientFactory.js.map
